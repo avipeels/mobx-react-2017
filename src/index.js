@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import { Provider } from 'mobx-react';
+import BirdStore from './stores/BirdStore';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider BirdStore={BirdStore}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
